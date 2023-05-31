@@ -4,12 +4,13 @@
   become: true
 
   tasks:
-    - name: Install apt-transport-https
+    - name: Install packages
       apt:
         name:
           - curl
           - wget
           - nano
           - htop
+          - nginx
         state: latest
         update_cache: true

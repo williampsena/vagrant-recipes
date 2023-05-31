@@ -1,6 +1,6 @@
 # Intro
 
-This repository contains Vagrant machine examples.
+This repository contains Vagrant machine examples.git
 
 # Requirements
 

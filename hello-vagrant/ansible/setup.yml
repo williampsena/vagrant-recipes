@@ -1,0 +1,15 @@
+---
+- name: Setup vagrant
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install apt-transport-https
+      apt:
+        name:
+          - curl
+          - wget
+          - nano
+          - htop
+        state: latest
+        update_cache: true

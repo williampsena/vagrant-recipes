@@ -2,9 +2,11 @@ IP = "192.168.0.200"
 ANSIBLE_PATH = File.expand_path("./ansible")
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "debian/buster64"
+  config.vm.box = "debian/bullseye64"
   config.vm.hostname = "hello-vagrant"
   config.vm.network :private_network, ip: IP
+
+  config.vm.synced_folder "shared", "/shared"
 
   config.vm.provision "setup", type: "ansible" do |ansible|
     ansible.playbook = "#{ANSIBLE_PATH}/setup.yml"
